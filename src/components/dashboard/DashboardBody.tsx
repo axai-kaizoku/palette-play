@@ -18,7 +18,7 @@ type Props = {
 	session: any;
 };
 
-const DashboardBody = (props: Props) => {
+export default function DashboardBody(props: Props) {
 	const { session } = props;
 	const pathname = usePathname();
 	const isDashboard = pathname === '/';
@@ -45,6 +45,8 @@ const DashboardBody = (props: Props) => {
 				setLoading(false);
 			});
 		}
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [session?.user?.id]);
 
 	return (
@@ -95,6 +97,4 @@ const DashboardBody = (props: Props) => {
 			/>
 		</div>
 	);
-};
-
-export default DashboardBody;
+}

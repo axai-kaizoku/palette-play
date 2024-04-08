@@ -8,7 +8,7 @@ type Props = {
 	session: any;
 };
 
-const NewRoomModal = (props: Props) => {
+export default function NewRoomModal(props: Props) {
 	const { session, show, setShow, loadUserDrawingRooms } = props;
 	const [roomName, setRoomName] = useState<string>('');
 	const [isPublic, setIsPublic] = useState<boolean>(false);
@@ -69,6 +69,4 @@ const NewRoomModal = (props: Props) => {
 			)}
 		</>
 	);
-};
-
-export default NewRoomModal;
+}
